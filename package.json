@@ -14,7 +14,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --watchAll=false --coverage --testResultsProcessor jest-sonar-reporter",
+    "test": "react-scripts test",
+    "test:noWatch": "npm run test -- --watchAll=false",
+    "test:report": "npm run test:noWatch -- --coverage --testResultsProcessor jest-sonar-reporter",
+    "lint": "eslint --fix",
+    "lint:report": "npm run lint -- -f json -o eslint-report.json",
     "eject": "react-scripts eject",
     "sonar": "node sonarqube-scanner.js"
   },
