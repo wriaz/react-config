@@ -14,6 +14,7 @@ jobs:
       uses: actions/setup-node@v3
       with: 
           node-version: ${{ matrix.version }}
+          cache: 'npm'
     - run: npm install
     - name: Running platform ${{ matrix.platform }} using Node ${{ matrix.version }}
       run: npm test
